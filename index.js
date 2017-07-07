@@ -11,7 +11,7 @@ const moment = require('moment')
 
 ss.readAll((siteListArray = []) => {
     //recursiveCall(1940, 1950, siteListArray)
-    recursiveCall(0, 2146, siteListArray)
+    recursiveCall(557, 2146, siteListArray)
 })
 
 let recursiveCall = function (pos, length, siteListArray) {

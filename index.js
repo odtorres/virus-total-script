@@ -24,7 +24,7 @@ let recursiveCall = function (pos, length, siteListArray) {
             } else {
                 setTimeout(() => {
                     recursiveCall(pos, length, siteListArray)
-                }, 60000)
+                }, 120000)
             }
 
         })

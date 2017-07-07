@@ -1,6 +1,6 @@
 const vt = require('./src/VirusTotal')
 const ss = require('./src/Spreadsheets')
-
+const moment = require('moment')
 /*vt.scanURLResponse("greenvillesc-ilovekickboxing.com", (response, error) => {
     if(!error){
         console.log("respuesta ", response)
@@ -19,7 +19,7 @@ let recursiveCall = function (pos, length, siteListArray) {
         console.log(siteListArray[pos].site)
         vt.scanURLResponse(siteListArray[pos].site, function (response, error) {
             if (!error && response.positives != undefined) {
-                ss.write(siteListArray[pos].site, [['' + response.positives]])
+                ss.write(siteListArray[pos].site, [[moment().format("MM/DD/YYYY HH:mm:ss ")+' - (' + response.positives+')']])
                 recursiveCall(pos + 1, length, siteListArray)
             } else {
                 setTimeout(() => {
